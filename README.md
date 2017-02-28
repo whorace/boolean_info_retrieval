@@ -1,15 +1,17 @@
-Building a simple Boolean Information Retrieval System(Python)
+Boolean Information Retrieval System(Python)
 =================================================================
 
-  Title: CS132a spring 2017 Assignment 3: Building a simple Boolean Information Retrieval System
-  Instruction: instruction.pdf in the file.
-  Author: Hao Wang
-  Date:2/27/2017
+    Title: CS132a spring 2017 Assignment 3: Building a simple Boolean Information Retrieval System
+    Instruction: instruction.pdf in the file.
+    Author: Hao Wang
+    Date:2/27/2017
 
 ---
 
 ###Description:
 The program implements a simple Boolean information retrieval system supporting conjunctive (“AND”) queries over terms, and apply it to your Wikipedia movie corpus.
+
+---
 
 ###Dependencies:
 * OS: OSX(macOS Sierra)
