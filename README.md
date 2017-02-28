@@ -2,8 +2,8 @@ Boolean Information Retrieval System(Python)
 =================================================================
 
     Title: CS132a spring 2017 Assignment 3: Building a simple Boolean Information Retrieval System
-    Instruction: instruction.pdf in the file.
-    Author: Hao Wang
+    Instruction: instruction.pdf 
+    Author: Hao Wang(haowang@brandeis.edu)
     Date:2/27/2017
 
 ---
