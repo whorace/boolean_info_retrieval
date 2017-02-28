@@ -1,0 +1,79 @@
+<!doctype html>
+
+
+<head>
+    <title>Search Result Page</title>
+</head>
+
+<body bgcolor="#CCFFCC">
+
+  <h1>Your search results:<br></h1>
+  <h3>"Search:"{{text}}</h3>
+  <h3>"Number of Articles:"{{num_of_article}}</h3>
+  <h3>"Current Page:"{{current_page}}</h3>
+  {% if model == 0 %}
+  <h3>{{warning}}<h3>
+  {% else %}
+  <form action="show_detail" method="post">
+      <h3>{{warning}}<h3>
+      <ol class="results">
+
+          {% for res in results %}
+
+            <li>
+                <h3>{{res.title}}</h3>
+                <br>
+                <p>{{res.abstractOfText}}</p>
+
+            </li>
+
+                <a href={{res.posting_id}}>Detail</a>
+            <hr />
+          {% endfor %}
+      </ol>
+  </form>
+  {% endif %}
+
+  <form action="results" name="search" method="get">
+      <dl>
+          <dt>Search again:
+          <dd><input type="text" name="query">
+          <dd><input type="hidden" name="page" value="1">
+          <dd><input type="submit" value="Search">
+      </dl>
+  </form>
+  <br>
+  <div>
+      <ul style="list-style-type: none">
+        {% if current_page == 1 %}
+        {% else %}
+        <li style="display:inline">
+          <a href=results?query={{query}}&page={{current_page-1}}>BACK</a>
+        </li>
+        {% endif %}
+
+        {% for count in range(1, pages+1) %}
+        {% if count == current_page %}
+        <!-- make some special color -->
+        <li style="display:inline; background-color:#eeeeee">
+          <a href=results?query={{query}}&page={{count}}>{{count}}</a>
+        </li>
+        {% else %}
+        <li style="display:inline">
+          <a href=results?query={{query}}&page={{count}}>{{count}}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+
+        {% if current_page == pages or pages == 0 %}
+        {% else %}
+        <li style="display:inline">
+          <a href=results?query={{query}}&page={{current_page+1}}>FORWARD</a>
+        </li>
+        {% endif %}
+
+      </ul>
+
+  </div>
+
+</body>
